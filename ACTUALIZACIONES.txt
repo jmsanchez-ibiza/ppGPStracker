@@ -1,0 +1,43 @@
+POR HACER:
+- Incorporar el mecanismo de PREFERENCIAS para almacenar los valores de config-
+  racion.
+- Que una vez que estamos en "estado de seguimiento intensivo", se desconecte y
+  vuelva al "estado normal", pasado por ejemplo 5 minutos.
+- Activar el proceso del botón "Registrar ahora"
+- Uno de los campos de la tabla 'points' es 'puntoenviado' que ahora por defecto
+  se pone en 'false', hay que incorporar el código necesario para que cuando se
+  envíe un punto a OpenGTS, se marque como 'true', de esta forma por ejemplo, en
+  el proceso de exportación se podría volver a intentar enviar los puntos que en
+  su día no fueron enviados. O bien, un botón de 'enviar puntos pendientes' que
+  haga eso mismo.
+  Como este campo también queda grabado en el fichero generado en la exportación
+  también se podría hacer un programa externo que lea los ficheros exportados y
+  envíe los puntos pendientes.
+  
+20/09/2013 19:28:45
+- Los puntos se van grabando en la db (sqLite), cuando tengamos en la db al
+  menos "x" cantidad de registros hay que exportarlos a un fichero TXT.
+  Tendremos un fichero por usuario y por día y los puntos se irán añadiendo
+  a ese fichero.
+  Hay que ver la fecha de cada punto de la db pues puede haber de más de un día
+  y por lo tanto grabarlos en el fichero correspondiente al usuario y al día.
+
+03/09/2013 19:05:15
+/** GPSLoggerService.java // showNotification()
+* JMSG 03/09/2013, 19:02:07
+* Hacer que la notificación no se pueda borrar por el usuario
+*/
+notification.flags |= Notification.FLAG_NO_CLEAR;
+    
+01/09/2013 18:39:24
+- Se ha activado que la aplicación se ejecute al iniciar el teléfono auto-
+  maticamente.
+- Se incorporado que al pulsar sobre la notificación se muestre nuestra
+  actividad principal.
+- Se ha añadido el boton "Seguimiento Intensivo", al pulsarlo el programa envía
+  la señal cada 2 seg. y al volverlo a pulsar vuelve al estado normal
+
+31/08/2013 20:35:34
+- Se ha corregido el formato del archivo TXT de exportación para que sea
+  compatible con el formato CSV. Sólo que al final del archivo van 4 tags
+  <beginTime>, <endTime>, <fileName> y <userID>

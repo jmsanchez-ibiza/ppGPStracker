@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroll"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context=".GpsTrackerActivity" >
+    
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#000000" >
+
+        <TextView
+            android:id="@+id/txtStatus"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#333333"
+            android:text="GPS no iniciado"
+            android:textColor="#ffffffff" />
+
+        <TableLayout
+            android:id="@+id/TableGPS"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#000000"
+            android:stretchColumns="1" >
+
+            <TableRow
+                android:layout_margin="1dip"
+                android:background="#333333" >
+
+                <TextView
+                    android:id="@+id/txtDateTime"
+                    android:layout_span="2"
+                    android:gravity="left"
+                    android:padding="2dip"
+                    android:text="Fecha y hora no especificadas"
+                    android:textColor="#ffffff" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_margin="1dip"
+                android:background="#333333" >
+
+                <TextView
+                    android:id="@+id/txtLastLocationInfo"
+                    android:layout_span="2"
+                    android:gravity="left"
+                    android:padding="3dip"
+                    android:text="Lat, Lon"
+                    android:textColor="#e8a317"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_margin="1dip"
+                android:background="#333333" >
+
+                <TextView
+                    android:id="@+id/txtLastLocationInfoExtra"
+                    android:layout_span="2"
+                    android:gravity="left"
+                    android:padding="2dip"
+                    android:text="Información Extra: Ninguna"
+                    android:textColor="#ffffff" />
+
+            </TableRow>
+        </TableLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <!--
+                <Button android:id="@+id/buttonStart" android:layout_width="120px"
+                android:layout_height="wrap_content" android:tag="Start"
+                android:text="Start" /> <Button android:id="@+id/buttonStop"
+                android:layout_width="120px" android:layout_height="wrap_content"
+                android:tag="Stop" android:text="Stop" />
+
+            -->
+
+            <Button
+                android:id="@+id/buttonRegistro"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/btnCaptionRegistroDetener"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#ffffff" />
+
+            <Button
+                android:id="@+id/buttonIntensivo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/btnCaptionUsoIntensivo"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#ffffff" />
+"
+            
+            <Button
+                android:id="@+id/buttonReiniciar"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="@string/btnCaptionReiniciar"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="#ffffff" />
+
+        </LinearLayout>
+
+        <TableLayout
+            android:id="@+id/TableSummary"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#222222" >
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+
+                <TextView
+                    android:id="@+id/lblNombreFichero"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:paddingLeft="8dip"
+                    android:text="Guardar en:"
+                    android:textColor="#ffffff"
+                    android:textSize="9dip"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:id="@+id/txtTripName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:paddingLeft="3dip"
+                    android:textSize="9dip"
+                    android:textStyle="italic" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+
+                <TextView
+                    android:id="@+id/lblPassActive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:paddingLeft="8dip"
+                    android:text="Pass Activo:"
+                    android:textColor="#ffffff"
+                    android:textSize="9dip"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:id="@+id/txtPassActive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:paddingLeft="3dip"
+                    android:textSize="9dip"
+                    android:textStyle="italic" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+
+                <TextView
+                    android:id="@+id/lblFrequency"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:paddingLeft="8dip"
+                    android:text="Frecuencia:"
+                    android:textColor="#ffffff"
+                    android:textSize="9dip"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:id="@+id/txtFrequency"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:paddingLeft="3dip"
+                    android:textSize="9dip"
+                    android:textStyle="italic" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+
+                <TextView
+                    android:id="@+id/lblMinAccuracy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:paddingLeft="8dip"
+                    android:text="Precisión min.:"
+                    android:textColor="#ffffff"
+                    android:textSize="9dip"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:id="@+id/txtMinAccuracy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:paddingLeft="3dip"
+                    android:textSize="9dip"
+                    android:textStyle="italic" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+
+                <TextView
+                    android:id="@+id/lblDistance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:paddingLeft="8dip"
+                    android:text="Distancia Min.:"
+                    android:textColor="#ffffff"
+                    android:textSize="9dip"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:id="@+id/txtDistance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:paddingLeft="3dip"
+                    android:textSize="9dip"
+                    android:textStyle="italic" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+
+                <TextView
+                    android:id="@+id/lblAltitudeCorrectionMeters"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:paddingLeft="8dip"
+                    android:text="Correc. Altitud:"
+                    android:textColor="#ffffff"
+                    android:textSize="9dip"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:id="@+id/txtAltitudeCorrectionMeters"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:paddingLeft="3dip"
+                    android:textSize="9dip"
+                    android:textStyle="italic" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+
+                <TextView
+                    android:id="@+id/lblShowDebug"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:paddingLeft="8dip"
+                    android:text="Debug:"
+                    android:textColor="#ffffff"
+                    android:textSize="9dip"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:id="@+id/txtShowDebug"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:paddingLeft="3dip"
+                    android:textSize="9dip"
+                    android:textStyle="italic" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+
+                <TextView
+                    android:id="@+id/lblServer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:paddingLeft="8dip"
+                    android:text="OPEN_GTS Server:"
+                    android:textColor="#ffffff"
+                    android:textSize="9dip"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:id="@+id/txtServer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:paddingLeft="3dip"
+                    android:textSize="9dip"
+                    android:textStyle="italic" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+
+                <TextView
+                    android:id="@+id/lblAccountName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:paddingLeft="8dip"
+                    android:text="Cuenta:"
+                    android:textColor="#ffffff"
+                    android:textSize="9dip"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:id="@+id/txtAccountName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:paddingLeft="3dip"
+                    android:textSize="9dip"
+                    android:textStyle="italic" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+
+                <TextView
+                    android:id="@+id/lblUserID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:paddingLeft="8dip"
+                    android:text="Usuario:"
+                    android:textColor="#ffffff"
+                    android:textSize="9dip"
+                    android:textStyle="italic" />
+
+                <TextView
+                    android:id="@+id/txtUserID"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:paddingLeft="3dip"
+                    android:textSize="9dip"
+                    android:textStyle="italic" />
+            </TableRow>
+        </TableLayout>
+
+        <!--
+  	<TextView android:id="@+id/lblSummary" android:layout_width="fill_parent"
+      android:layout_height="wrap_content" android:textStyle="italic"
+      android:textSize="11dip" />
+        -->
+
+    </LinearLayout>
+
+</ScrollView>

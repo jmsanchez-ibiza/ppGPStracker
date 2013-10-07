@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ppGPStracker</string>
+    <string name="action_settings">Ajustes</string>
+    
+    <string name="service_started">Se inició el rastreo GPS</string>
+    <string name="service_label">GPStracker Piscinas Pepe</string>
+    <string name="statusConectado">Conectado</string>
+    <string name="statusDesconectado">Desconectado</string>
+    
+    <string name="btnCaptionRegistroIniciar">Iniciar</string>
+    <string name="btnCaptionRegistroDetener">Detener</string>
+    <string name="btnCaptionUsoNormal">Uso Normal</string>
+    <string name="btnCaptionUsoIntensivo">Uso Intensivo</string>
+    <string name="btnCaptionReiniciar">Re-iniciar</string>
+
+</resources>
